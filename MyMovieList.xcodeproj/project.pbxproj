@@ -17,6 +17,8 @@
 		1F4BB8D3289C482D008BBECA /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 1F4BB8D2289C482D008BBECA /* Alamofire */; };
 		1F4BB8D6289C4843008BBECA /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 1F4BB8D5289C4843008BBECA /* SnapKit */; };
 		1F4BB8D8289C4E61008BBECA /* APICaller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F4BB8D7289C4E61008BBECA /* APICaller.swift */; };
+		1F4BB8DA289C60F9008BBECA /* Movie.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F4BB8D9289C60F9008BBECA /* Movie.swift */; };
+		1F4BB8DC289C6108008BBECA /* Tv.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F4BB8DB289C6108008BBECA /* Tv.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +32,8 @@
 		1F4BB8C1289C42BA008BBECA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1F4BB8CF289C4728008BBECA /* BaseService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseService.swift; sourceTree = "<group>"; };
 		1F4BB8D7289C4E61008BBECA /* APICaller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APICaller.swift; sourceTree = "<group>"; };
+		1F4BB8D9289C60F9008BBECA /* Movie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Movie.swift; sourceTree = "<group>"; };
+		1F4BB8DB289C6108008BBECA /* Tv.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tv.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,6 +100,8 @@
 		1F4BB8C9289C4620008BBECA /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				1F4BB8D9289C60F9008BBECA /* Movie.swift */,
+				1F4BB8DB289C6108008BBECA /* Tv.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -211,10 +217,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1F4BB8DA289C60F9008BBECA /* Movie.swift in Sources */,
 				1F4BB8B5289C42B7008BBECA /* HomeViewController.swift in Sources */,
 				1F4BB8D8289C4E61008BBECA /* APICaller.swift in Sources */,
 				1F4BB8B1289C42B7008BBECA /* AppDelegate.swift in Sources */,
 				1F4BB8BB289C42B7008BBECA /* MyMovieList.xcdatamodeld in Sources */,
+				1F4BB8DC289C6108008BBECA /* Tv.swift in Sources */,
 				1F4BB8D0289C4728008BBECA /* BaseService.swift in Sources */,
 				1F4BB8B3289C42B7008BBECA /* SceneDelegate.swift in Sources */,
 			);

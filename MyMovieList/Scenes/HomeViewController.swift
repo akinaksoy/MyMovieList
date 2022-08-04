@@ -12,8 +12,11 @@ class HomeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        print(APIConstants.URL.moviePopularURL)
+        BaseService.requestAPI(APIConstants.URL.tvPopularURL, object: TvResponse.self) { result, error in
+            print(result)
+        }
     }
+    
 
 
 }

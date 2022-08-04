@@ -19,13 +19,11 @@ class APICaller {
     enum movieCategory : String {
         case popular = "popular"
         case topRated = "top_rated"
-        case latest = "latest"
         case upcoming = "upcoming"
         case nowPlaying = "now_playing"
     }
     
     enum tvCategory : String {
-        case latest = "latest"
         case popular = "popular"
         case topRated = "top_rated"
         case onTheAir = "on_the_air"
@@ -59,9 +57,6 @@ struct APIConstants {
         static var movieTopratedURL : String {
             return apiCaller.prepareAPI(.movie, .topRated, nil)
         }
-        static var movieLatestURL : String {
-            return apiCaller.prepareAPI(.movie, .latest, nil)
-        }
         static var movieUpcomingURL : String {
             return apiCaller.prepareAPI(.movie, .upcoming, nil)
         }
@@ -70,9 +65,6 @@ struct APIConstants {
         }
         static var tvPopularURL : String {
             return apiCaller.prepareAPI(.tv, nil, .popular)
-        }
-        static var tvLatestURL : String {
-            return apiCaller.prepareAPI(.tv, nil, .latest)
         }
         static var tvTopratedURL : String {
             return apiCaller.prepareAPI(.tv, nil, .topRated)
