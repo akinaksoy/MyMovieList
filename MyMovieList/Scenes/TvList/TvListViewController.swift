@@ -7,7 +7,10 @@
 
 import UIKit
 
-class TvListViewController: BaseViewController {
+class TvListViewController: BaseViewController, TvCollectionViewTableViewCellDelegate {
+    
+    
+    
 
     enum Sections: Int {
         case popular = 0
@@ -131,14 +134,13 @@ extension TvListViewController : UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         return sectionTvs[section]
     }
-}
-extension TvListViewController : MovieCollectionViewTableViewCellDelegate {
-    func collectionViewTableViewCellDidTapCell(_ cell: MovieListTableViewCell, view: MovieDataModel) {
+    
+    func collectionViewTableViewCellDidTapCell(_ cell: TvTableViewCell, view: Tv) {
         DispatchQueue.main.async { [weak self ] in
             let vc = TvListViewController()
             //vc.configure(with: view)
             self?.navigationController?.pushViewController(vc, animated: true)
         }
-        
     }
 }
+

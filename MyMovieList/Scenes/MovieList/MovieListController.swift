@@ -141,10 +141,10 @@ extension MovieListController : UITableViewDelegate, UITableViewDataSource {
 }
 
 extension MovieListController : MovieCollectionViewTableViewCellDelegate {
-    func collectionViewTableViewCellDidTapCell(_ cell: MovieListTableViewCell, view: MovieDataModel) {
+    func collectionViewTableViewCellDidTapCell(_ cell: MovieListTableViewCell, view: Movie) {
         DispatchQueue.main.async { [weak self ] in
-            let vc = TvListViewController()
-            //vc.configure(with: view)
+            let vc = MovieDetailViewController()
+            vc.configureDetail(model: view)
             self?.navigationController?.pushViewController(vc, animated: true)
         }
         

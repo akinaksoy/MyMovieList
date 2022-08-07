@@ -9,7 +9,7 @@ import UIKit
 import SnapKit
 
 protocol MovieCollectionViewTableViewCellDelegate : AnyObject {
-    func collectionViewTableViewCellDidTapCell(_ cell : MovieListTableViewCell, view:MovieDataModel)
+    func collectionViewTableViewCellDidTapCell(_ cell : MovieListTableViewCell, view:Movie)
 }
 
 class MovieListTableViewCell: UITableViewCell {
@@ -66,6 +66,11 @@ extension MovieListTableViewCell : UICollectionViewDelegate,UICollectionViewData
         cell.configure(with: model)
         return cell
         
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let movie = self.movies[indexPath.row]
+        self.didTapDelegate?.collectionViewTableViewCellDidTapCell(self, view: movie)
     }
     
 }

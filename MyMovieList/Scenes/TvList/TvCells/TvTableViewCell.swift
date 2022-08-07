@@ -8,14 +8,14 @@
 import UIKit
 
 protocol TvCollectionViewTableViewCellDelegate : AnyObject {
-    func collectionViewTableViewCellDidTapCell(_ cell : TvTableViewCell, view:TvDataModel)
+    func collectionViewTableViewCellDidTapCell(_ cell : TvTableViewCell, view:Tv)
 }
 
 class TvTableViewCell: UITableViewCell {
 
     static let identifier = "TvTableViewCell"
     private var tvSeries : [Tv] = [Tv]()
-    weak var didTapDelegate : MovieCollectionViewTableViewCellDelegate?
+    weak var didTapDelegate : TvCollectionViewTableViewCellDelegate?
     
     lazy var tvCollectionView : UICollectionView = {
         let layout = UICollectionViewFlowLayout()
