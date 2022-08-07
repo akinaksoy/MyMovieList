@@ -8,7 +8,7 @@
 import UIKit
 import SnapKit
 
-protocol CollectionViewTableViewCellDelegate : AnyObject {
+protocol MovieCollectionViewTableViewCellDelegate : AnyObject {
     func collectionViewTableViewCellDidTapCell(_ cell : MovieListTableViewCell, view:MovieDataModel)
 }
 
@@ -16,8 +16,8 @@ class MovieListTableViewCell: UITableViewCell {
     static let identifier = "MovieListTableViewCell"
     
     private var movies : [Movie] = [Movie]()
-    weak var didTapDelegate : CollectionViewTableViewCellDelegate?
-    lazy var tvCollectionView : UICollectionView = {
+    weak var didTapDelegate : MovieCollectionViewTableViewCellDelegate?
+    lazy var movieCollectionView : UICollectionView = {
         let layout = UICollectionViewFlowLayout()
         layout.itemSize = CGSize(width: 140, height: 200)
         layout.scrollDirection = .horizontal
@@ -31,9 +31,8 @@ class MovieListTableViewCell: UITableViewCell {
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
-        contentView.backgroundColor = .systemPink
         contentView.backgroundColor = UIColor.generalColor(primaryColor: Constants.Colors.backgroundColor, .red)
-        contentView.addSubview(tvCollectionView)
+        contentView.addSubview(movieCollectionView)
         
     }
     required init?(coder: NSCoder) {
@@ -41,7 +40,7 @@ class MovieListTableViewCell: UITableViewCell {
     }
     override func layoutSubviews() {
         super.layoutSubviews()
-        tvCollectionView.snp.makeConstraints { make in
+        movieCollectionView.snp.makeConstraints { make in
             make.edges.equalToSuperview()
         }
     }
@@ -49,7 +48,7 @@ class MovieListTableViewCell: UITableViewCell {
         self.movies = movies
         DispatchQueue.main.async {
             [weak self] in
-            self?.tvCollectionView.reloadData()
+            self?.movieCollectionView.reloadData()
         }
     }
 }

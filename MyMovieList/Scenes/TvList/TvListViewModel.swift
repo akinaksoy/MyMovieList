@@ -1,16 +1,15 @@
 //
-//  MovieListViewModel.swift
+//  TvListViewModel.swift
 //  MyMovieList
 //
 //  Created by Akın Aksoy on 7.08.2022.
 //
 
 import Foundation
-
-class MovieListViewModel {
+class TvListViewModel {
     
-    func fetchMovies(url : String,completion : @escaping(Result<[Movie],Error>) -> Void) {
-        BaseService.requestAPI(url, object: MovieResponse.self) { results in
+    func fetchTvSeries(url : String,completion : @escaping(Result<[Tv],Error>) -> Void) {
+        BaseService.requestAPI(url, object: TvResponse.self) { results in
             switch results {
             case .success(let result) :
                 let popularMovies = result.results
