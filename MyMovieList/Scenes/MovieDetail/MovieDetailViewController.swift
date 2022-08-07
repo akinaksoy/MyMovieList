@@ -18,6 +18,7 @@ class MovieDetailViewController: BaseViewController {
     let releaseDate = Label.subTitleLabel
     let overview = Label.contentTitle
     
+    let addWatchListButton = Button.button
     
     
     override func viewDidLoad() {
@@ -33,12 +34,15 @@ class MovieDetailViewController: BaseViewController {
     
     override func configureDesign() {
         super.configureDesign()
+        guard let id = movie?.id else {return}
+        checkWatchList(id: id)
         
         view.addSubview(headerImage)
         view.addSubview(headerTitle)
         view.addSubview(releaseDate)
         view.addSubview(overview)
         
+        view.addSubview(addWatchListButton)
         headerImage.snp.makeConstraints { make in
             make.top.equalTo(view.safeAreaLayoutGuide)
             make.left.equalToSuperview().offset(8)
@@ -63,6 +67,12 @@ class MovieDetailViewController: BaseViewController {
             make.left.right.equalToSuperview()
             make.centerX.equalToSuperview()
         }
+        addWatchListButton.snp.makeConstraints { make in
+            make.bottom.equalTo(view.safeAreaLayoutGuide)
+            make.width.equalToSuperview().multipliedBy(0.7)
+            make.height.equalTo(50)
+            make.centerX.equalToSuperview()
+        }
     }
     
     func configureDetail(model : Movie) {
@@ -76,5 +86,32 @@ class MovieDetailViewController: BaseViewController {
         overview.text = movie?.overview
     }
     
+    func checkWatchList(id : Int) {
+        
+        let isExist = MovieDatabaseFunctions.movieIsExist(movieId: id)
+        
+        if isExist == false {
+            addWatchListButton.setTitle("Add to Watchlist", for: .normal)
+            addWatchListButton.addTarget(self, action: #selector(clickedAddWatchlistButton), for: .touchUpInside)
+        } else {
+            addWatchListButton.setTitle("Remove from Watchlist", for: .normal)
+            addWatchListButton.addTarget(self, action: #selector(clickedRemoveWatchList), for: .touchUpInside)
+        }
+        
+        
+    }
+    
+    @objc func clickedAddWatchlistButton() {
+        guard let model = movie else {return}
+        MovieDatabaseFunctions.saveMovie(model: model)
+        checkWatchList(id: model.id)
+    }
+    @objc func clickedRemoveWatchList() {
+        guard let model = movie else {return}
+        if MovieDatabaseFunctions.deleteMovie(id: model.id) {
+            showAlert(title: "Success", message: "Movie Deleted from Watchlist")
+        }
+        checkWatchList(id: model.id)
+    }
 
 }
