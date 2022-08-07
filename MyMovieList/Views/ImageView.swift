@@ -11,7 +11,7 @@ class ImageView {
     
     
     
-    static let headerImage : UIImageView = {
+    let headerImage : UIImageView = {
         let imageView = UIImageView()
         imageView.backgroundColor = UIColor.generalColor(primaryColor: Constants.Colors.backgroundColor, .black)
         imageView.layer.cornerRadius = 2

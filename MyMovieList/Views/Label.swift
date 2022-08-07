@@ -10,7 +10,7 @@ import UIKit
 class Label {
     
     
-    static let headerTitleLabel : UILabel = {
+    let headerTitleLabel : UILabel = {
         let label = UILabel()
         label.font = .boldSystemFont(ofSize: 18)
         label.textColor = UIColor.generalColor(primaryColor: Constants.Colors.layerLabelColor, .white)
@@ -18,7 +18,7 @@ class Label {
         label.textAlignment = .center
         return label
     }()
-    static let subTitleLabel : UILabel = {
+    let subTitleLabel : UILabel = {
         let label = UILabel()
         label.font = .boldSystemFont(ofSize: 15)
         label.textColor = UIColor.generalColor(primaryColor: Constants.Colors.layerLabelColor, .white)
@@ -26,7 +26,7 @@ class Label {
         label.textAlignment = .center
         return label
     }()
-    static let contentTitle : UILabel = {
+    let contentTitle : UILabel = {
         let label = UILabel()
         label.font = .boldSystemFont(ofSize: 12)
         label.textColor = UIColor.generalColor(primaryColor: Constants.Colors.layerLabelColor, .white)

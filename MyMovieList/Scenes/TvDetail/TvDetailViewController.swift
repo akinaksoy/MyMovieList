@@ -10,10 +10,10 @@ import Kingfisher
 class TvDetailViewController: BaseViewController {
 
     private var tv : Tv? = nil
-    private let headerImage = ImageView.headerImage
-    let headerTitle = Label.headerTitleLabel
-    let releaseDate = Label.subTitleLabel
-    let overview = Label.contentTitle
+    private let headerImage = ImageView.init().headerImage
+    let headerTitle = Label.init().headerTitleLabel
+    let releaseDate = Label.init().subTitleLabel
+    let overview = Label.init().contentTitle
     override func viewDidLoad() {
         super.viewDidLoad()
 

@@ -9,7 +9,7 @@ import Foundation
 import UIKit
 class Button {
     
-    static let button : UIButton = {
+    let button : UIButton = {
         let button = UIButton()
         button.layer.borderWidth = 3
         button.layer.cornerRadius = 20

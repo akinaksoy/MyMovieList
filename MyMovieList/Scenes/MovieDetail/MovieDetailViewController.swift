@@ -13,19 +13,23 @@ class MovieDetailViewController: BaseViewController {
     
     private var movie : Movie? = nil
     
-    private let headerImage = ImageView.headerImage
+    private let headerImage = ImageView.init().headerImage
     
-    let headerTitle = Label.headerTitleLabel
-    let releaseDate = Label.subTitleLabel
-    let overview = Label.contentTitle
+    let headerTitle = Label.init().headerTitleLabel
+    let releaseDate = Label.init().subTitleLabel
+    let overview = Label.init().contentTitle
     
-    let addWatchListButton = Button.button
+    let addWatchListButton = Button.init().button
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
         configureNavigationBar()
         configureDesign()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        makeDesign()
     }
     
     func configureNavigationBar() {
@@ -42,6 +46,9 @@ class MovieDetailViewController: BaseViewController {
     
     override func configureDesign() {
         super.configureDesign()
+       
+    }
+    func makeDesign() {
         guard let id = movie?.id else {return}
         checkWatchList(id: id)
         

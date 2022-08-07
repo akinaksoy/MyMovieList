@@ -11,9 +11,9 @@ class FavouriteTableViewCell: UITableViewCell {
 
     static let identifier = "FavouriteTableViewCell"
     
-    let headerImageView = ImageView.headerImage
-    let titleLabel = Label.headerTitleLabel
-    let releaseDateLabel = Label.subTitleLabel
+    let headerImageView = ImageView.init().headerImage
+    let titleLabel = Label.init().headerTitleLabel
+    let releaseDateLabel = Label.init().subTitleLabel
     
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
@@ -45,7 +45,7 @@ class FavouriteTableViewCell: UITableViewCell {
             make.centerY.equalToSuperview()
             make.left.equalToSuperview().offset(16)
             make.width.equalToSuperview().dividedBy(3)
-            make.height.equalToSuperview()
+            make.height.equalToSuperview().inset(16)
         }
         
         titleLabel.snp.makeConstraints { make in
