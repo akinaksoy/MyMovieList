@@ -20,8 +20,15 @@ class TvDetailViewController: BaseViewController {
         configureNavigationBar()
         configureDesign()
     }
-    override func configureNavigationBar() {
-        super.configureNavigationBar()
+    func configureNavigationBar() {
+        let appearance = UINavigationBarAppearance()
+        appearance.titleTextAttributes = [.foregroundColor: Constants.Colors.navigationBarColor]
+        appearance.largeTitleTextAttributes = [.foregroundColor: Constants.Colors.titleColor]
+        appearance.backgroundColor = Constants.Colors.navigationBarColor
+        navigationItem.standardAppearance = appearance
+        navigationItem.scrollEdgeAppearance = appearance
+
+        navigationController?.navigationBar.tintColor = Constants.Colors.titleColor
         title = tv?.original_name
     }
     
