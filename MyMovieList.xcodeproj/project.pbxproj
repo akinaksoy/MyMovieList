@@ -10,6 +10,9 @@
 		1F22633D289FA9A3003DC0FE /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F22633C289FA9A3003DC0FE /* BaseViewController.swift */; };
 		1F22633F289FAA2A003DC0FE /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F22633E289FAA2A003DC0FE /* Constants.swift */; };
 		1F226341289FACF7003DC0FE /* ColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F226340289FACF7003DC0FE /* ColorExtension.swift */; };
+		1F226343289FB3A3003DC0FE /* MainTabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F226342289FB3A3003DC0FE /* MainTabViewController.swift */; };
+		1F226346289FB3F4003DC0FE /* TvListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F226345289FB3F4003DC0FE /* TvListViewController.swift */; };
+		1F226349289FB41F003DC0FE /* FavouriteListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F226348289FB41F003DC0FE /* FavouriteListViewController.swift */; };
 		1F4BB8B1289C42B7008BBECA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F4BB8B0289C42B7008BBECA /* AppDelegate.swift */; };
 		1F4BB8B3289C42B7008BBECA /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F4BB8B2289C42B7008BBECA /* SceneDelegate.swift */; };
 		1F4BB8B5289C42B7008BBECA /* MovieListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F4BB8B4289C42B7008BBECA /* MovieListController.swift */; };
@@ -28,6 +31,9 @@
 		1F22633C289FA9A3003DC0FE /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		1F22633E289FAA2A003DC0FE /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		1F226340289FACF7003DC0FE /* ColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorExtension.swift; sourceTree = "<group>"; };
+		1F226342289FB3A3003DC0FE /* MainTabViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabViewController.swift; sourceTree = "<group>"; };
+		1F226345289FB3F4003DC0FE /* TvListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TvListViewController.swift; sourceTree = "<group>"; };
+		1F226348289FB41F003DC0FE /* FavouriteListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouriteListViewController.swift; sourceTree = "<group>"; };
 		1F4BB8AD289C42B7008BBECA /* MyMovieList.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyMovieList.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1F4BB8B0289C42B7008BBECA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1F4BB8B2289C42B7008BBECA /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -61,6 +67,22 @@
 				1F4BB8B4289C42B7008BBECA /* MovieListController.swift */,
 			);
 			path = MovieList;
+			sourceTree = "<group>";
+		};
+		1F226344289FB3D0003DC0FE /* TvList */ = {
+			isa = PBXGroup;
+			children = (
+				1F226345289FB3F4003DC0FE /* TvListViewController.swift */,
+			);
+			path = TvList;
+			sourceTree = "<group>";
+		};
+		1F226347289FB405003DC0FE /* FavouriteList */ = {
+			isa = PBXGroup;
+			children = (
+				1F226348289FB41F003DC0FE /* FavouriteListViewController.swift */,
+			);
+			path = FavouriteList;
 			sourceTree = "<group>";
 		};
 		1F4BB8A4289C42B7008BBECA = {
@@ -134,7 +156,10 @@
 		1F4BB8CB289C462C008BBECA /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				1F226347289FB405003DC0FE /* FavouriteList */,
+				1F226344289FB3D0003DC0FE /* TvList */,
 				1F22633B289FA832003DC0FE /* MovieList */,
+				1F226342289FB3A3003DC0FE /* MainTabViewController.swift */,
 			);
 			path = Scenes;
 			sourceTree = "<group>";
@@ -235,10 +260,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				1F4BB8DA289C60F9008BBECA /* Movie.swift in Sources */,
+				1F226346289FB3F4003DC0FE /* TvListViewController.swift in Sources */,
+				1F226349289FB41F003DC0FE /* FavouriteListViewController.swift in Sources */,
 				1F22633F289FAA2A003DC0FE /* Constants.swift in Sources */,
 				1F4BB8B5289C42B7008BBECA /* MovieListController.swift in Sources */,
 				1F4BB8D8289C4E61008BBECA /* APICaller.swift in Sources */,
 				1F4BB8B1289C42B7008BBECA /* AppDelegate.swift in Sources */,
+				1F226343289FB3A3003DC0FE /* MainTabViewController.swift in Sources */,
 				1F4BB8BB289C42B7008BBECA /* MyMovieList.xcdatamodeld in Sources */,
 				1F22633D289FA9A3003DC0FE /* BaseViewController.swift in Sources */,
 				1F4BB8DC289C6108008BBECA /* Tv.swift in Sources */,

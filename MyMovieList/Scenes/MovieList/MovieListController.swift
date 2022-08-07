@@ -29,13 +29,9 @@ class MovieListController: BaseViewController {
         BaseService.requestAPI(APIConstants.URL.tvPopularURL, object: TvResponse.self) { result, error in
             print(result)
         }
-        configureNavigationBar()
         configureDesign()
     }
     
-    override func configureNavigationBar() {
-        super.configureNavigationBar()
-    }
     
     override func configureDesign() {
         super.configureDesign()
