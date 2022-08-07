@@ -137,8 +137,8 @@ extension TvListViewController : UITableViewDelegate, UITableViewDataSource {
     
     func collectionViewTableViewCellDidTapCell(_ cell: TvTableViewCell, view: Tv) {
         DispatchQueue.main.async { [weak self ] in
-            let vc = TvListViewController()
-            //vc.configure(with: view)
+            let vc = TvDetailViewController()
+            vc.configureDetail(model: view)
             self?.navigationController?.pushViewController(vc, animated: true)
         }
     }

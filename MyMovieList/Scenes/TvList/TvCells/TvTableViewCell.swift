@@ -68,4 +68,9 @@ extension TvTableViewCell : UICollectionViewDelegate,UICollectionViewDataSource 
         
     }
     
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let tv = self.tvSeries[indexPath.row]
+        self.didTapDelegate?.collectionViewTableViewCellDidTapCell(self, view: tv)
+    }
+    
 }

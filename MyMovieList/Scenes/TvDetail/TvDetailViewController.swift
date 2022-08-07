@@ -1,34 +1,28 @@
 //
-//  MovieDetailViewController.swift
+//  TvDetailViewController.swift
 //  MyMovieList
 //
 //  Created by Akın Aksoy on 7.08.2022.
 //
 
 import UIKit
-import SnapKit
-class MovieDetailViewController: BaseViewController {
 
-    
-    private var movie : Movie? = nil
-    
+class TvDetailViewController: BaseViewController {
+
+    private var tv : Tv? = nil
     private let headerImage = ImageView.headerImage
-    
     let headerTitle = Label.headerTitleLabel
     let releaseDate = Label.subTitleLabel
     let overview = Label.contentTitle
-    
-    
-    
     override func viewDidLoad() {
         super.viewDidLoad()
+
         configureNavigationBar()
         configureDesign()
     }
-    
     override func configureNavigationBar() {
         super.configureNavigationBar()
-        title = movie?.original_name
+        title = tv?.original_name
     }
     
     override func configureDesign() {
@@ -65,16 +59,15 @@ class MovieDetailViewController: BaseViewController {
         }
     }
     
-    func configureDetail(model : Movie) {
-        self.movie = model
-        guard let movieTitle = movie?.original_title, let releaseDateValue = movie?.release_date  else { return }
-        guard let movieImage = movie?.poster_path else {return }
-        guard let url = URL(string: "https://image.tmdb.org/t/p/w500\(movieImage)") else {return }
+    func configureDetail(model : Tv) {
+        self.tv = model
+        guard let tvTitle = tv?.original_name, let releaseDateValue = tv?.first_air_date  else { return }
+        guard let tvImage = tv?.poster_path else {return }
+        guard let url = URL(string: "https://image.tmdb.org/t/p/w500\(tvImage)") else {return }
         headerImage.sd_setImage(with: url, completed: nil)
-        headerTitle.text = movieTitle
-        releaseDate.text = "Release Date : \(releaseDateValue)"
-        overview.text = movie?.overview
+        headerTitle.text = tvTitle
+        releaseDate.text = "First Air Date : \(releaseDateValue)"
+        overview.text = tv?.overview
     }
-    
 
 }

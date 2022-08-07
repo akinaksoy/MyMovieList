@@ -23,6 +23,8 @@
 		1F226362289FEE3C003DC0FE /* TvListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F226361289FEE3C003DC0FE /* TvListViewModel.swift */; };
 		1F22636528A023FC003DC0FE /* MovieDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F22636428A023FC003DC0FE /* MovieDetailViewController.swift */; };
 		1F22636728A025AC003DC0FE /* Label.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F22636628A025AC003DC0FE /* Label.swift */; };
+		1F22636A28A02DFD003DC0FE /* TvDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F22636928A02DFD003DC0FE /* TvDetailViewController.swift */; };
+		1F22636C28A02E0E003DC0FE /* ImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F22636B28A02E0E003DC0FE /* ImageView.swift */; };
 		1F4BB8B1289C42B7008BBECA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F4BB8B0289C42B7008BBECA /* AppDelegate.swift */; };
 		1F4BB8B3289C42B7008BBECA /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F4BB8B2289C42B7008BBECA /* SceneDelegate.swift */; };
 		1F4BB8B5289C42B7008BBECA /* MovieListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F4BB8B4289C42B7008BBECA /* MovieListController.swift */; };
@@ -53,6 +55,8 @@
 		1F226361289FEE3C003DC0FE /* TvListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TvListViewModel.swift; sourceTree = "<group>"; };
 		1F22636428A023FC003DC0FE /* MovieDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetailViewController.swift; sourceTree = "<group>"; };
 		1F22636628A025AC003DC0FE /* Label.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Label.swift; sourceTree = "<group>"; };
+		1F22636928A02DFD003DC0FE /* TvDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TvDetailViewController.swift; sourceTree = "<group>"; };
+		1F22636B28A02E0E003DC0FE /* ImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageView.swift; sourceTree = "<group>"; };
 		1F4BB8AD289C42B7008BBECA /* MyMovieList.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyMovieList.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1F4BB8B0289C42B7008BBECA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1F4BB8B2289C42B7008BBECA /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -142,6 +146,14 @@
 			path = MovieDetail;
 			sourceTree = "<group>";
 		};
+		1F22636828A02D9E003DC0FE /* TvDetail */ = {
+			isa = PBXGroup;
+			children = (
+				1F22636928A02DFD003DC0FE /* TvDetailViewController.swift */,
+			);
+			path = TvDetail;
+			sourceTree = "<group>";
+		};
 		1F4BB8A4289C42B7008BBECA = {
 			isa = PBXGroup;
 			children = (
@@ -214,6 +226,7 @@
 		1F4BB8CB289C462C008BBECA /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				1F22636828A02D9E003DC0FE /* TvDetail */,
 				1F22636328A023E2003DC0FE /* MovieDetail */,
 				1F226347289FB405003DC0FE /* FavouriteList */,
 				1F226344289FB3D0003DC0FE /* TvList */,
@@ -238,6 +251,7 @@
 				1F22633C289FA9A3003DC0FE /* BaseViewController.swift */,
 				1F22634A289FB710003DC0FE /* HeaderSectionView.swift */,
 				1F22636628A025AC003DC0FE /* Label.swift */,
+				1F22636B28A02E0E003DC0FE /* ImageView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -322,9 +336,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1F22636C28A02E0E003DC0FE /* ImageView.swift in Sources */,
 				1F226350289FCF79003DC0FE /* MovieCollectionViewCell.swift in Sources */,
 				1F4BB8DA289C60F9008BBECA /* Movie.swift in Sources */,
 				1F22634E289FCDFE003DC0FE /* MovieListTableViewCell.swift in Sources */,
+				1F22636A28A02DFD003DC0FE /* TvDetailViewController.swift in Sources */,
 				1F226360289FEE13003DC0FE /* TvCollectionViewCell.swift in Sources */,
 				1F226346289FB3F4003DC0FE /* TvListViewController.swift in Sources */,
 				1F22635C289FED10003DC0FE /* TvTableViewCell.swift in Sources */,
