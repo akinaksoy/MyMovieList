@@ -23,7 +23,7 @@ class FavouriteListViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        configureNavigationBar()
+        configureNavigationBar(titleNav: "Favourites")
         configureDesign()
     }
     
@@ -36,16 +36,8 @@ class FavouriteListViewController: BaseViewController {
         }
     }
     
-    func configureNavigationBar() {
-        let appearance = UINavigationBarAppearance()
-        appearance.titleTextAttributes = [.foregroundColor: Constants.Colors.navigationBarColor]
-        appearance.largeTitleTextAttributes = [.foregroundColor: Constants.Colors.titleColor]
-        appearance.backgroundColor = Constants.Colors.navigationBarColor
-        navigationItem.standardAppearance = appearance
-        navigationItem.scrollEdgeAppearance = appearance
-
-        navigationController?.navigationBar.tintColor = Constants.Colors.titleColor
-        title = "Favourites"
+    override func configureNavigationBar(titleNav: String) {
+        super.configureNavigationBar(titleNav: titleNav)
     }
     
     override func configureDesign() {

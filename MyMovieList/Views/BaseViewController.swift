@@ -14,7 +14,17 @@ class BaseViewController: UIViewController {
         
     }
     
-    
+    func configureNavigationBar(titleNav : String) {
+        let appearance = UINavigationBarAppearance()
+        appearance.titleTextAttributes = [.foregroundColor: Constants.Colors.navigationBarColor]
+        appearance.largeTitleTextAttributes = [.foregroundColor: Constants.Colors.titleColor]
+        appearance.backgroundColor = Constants.Colors.navigationBarColor
+        navigationItem.standardAppearance = appearance
+        navigationItem.scrollEdgeAppearance = appearance
+
+        navigationController?.navigationBar.tintColor = Constants.Colors.titleColor
+        title = titleNav
+    }
     
     func configureDesign() {
         view.backgroundColor = Constants.Colors.backgroundColor
