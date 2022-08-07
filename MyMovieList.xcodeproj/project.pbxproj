@@ -14,6 +14,11 @@
 		1F226346289FB3F4003DC0FE /* TvListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F226345289FB3F4003DC0FE /* TvListViewController.swift */; };
 		1F226349289FB41F003DC0FE /* FavouriteListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F226348289FB41F003DC0FE /* FavouriteListViewController.swift */; };
 		1F22634B289FB710003DC0FE /* HeaderSectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F22634A289FB710003DC0FE /* HeaderSectionView.swift */; };
+		1F22634E289FCDFE003DC0FE /* MovieListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F22634D289FCDFE003DC0FE /* MovieListTableViewCell.swift */; };
+		1F226350289FCF79003DC0FE /* MovieCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F22634F289FCF79003DC0FE /* MovieCollectionViewCell.swift */; };
+		1F226353289FCFE4003DC0FE /* SDWebImage in Frameworks */ = {isa = PBXBuildFile; productRef = 1F226352289FCFE4003DC0FE /* SDWebImage */; };
+		1F226355289FD04A003DC0FE /* MovieListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F226354289FD04A003DC0FE /* MovieListViewModel.swift */; };
+		1F226358289FE3B6003DC0FE /* MovieDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F226357289FE3B6003DC0FE /* MovieDataModel.swift */; };
 		1F4BB8B1289C42B7008BBECA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F4BB8B0289C42B7008BBECA /* AppDelegate.swift */; };
 		1F4BB8B3289C42B7008BBECA /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F4BB8B2289C42B7008BBECA /* SceneDelegate.swift */; };
 		1F4BB8B5289C42B7008BBECA /* MovieListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F4BB8B4289C42B7008BBECA /* MovieListController.swift */; };
@@ -36,6 +41,10 @@
 		1F226345289FB3F4003DC0FE /* TvListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TvListViewController.swift; sourceTree = "<group>"; };
 		1F226348289FB41F003DC0FE /* FavouriteListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouriteListViewController.swift; sourceTree = "<group>"; };
 		1F22634A289FB710003DC0FE /* HeaderSectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderSectionView.swift; sourceTree = "<group>"; };
+		1F22634D289FCDFE003DC0FE /* MovieListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieListTableViewCell.swift; sourceTree = "<group>"; };
+		1F22634F289FCF79003DC0FE /* MovieCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieCollectionViewCell.swift; sourceTree = "<group>"; };
+		1F226354289FD04A003DC0FE /* MovieListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieListViewModel.swift; sourceTree = "<group>"; };
+		1F226357289FE3B6003DC0FE /* MovieDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDataModel.swift; sourceTree = "<group>"; };
 		1F4BB8AD289C42B7008BBECA /* MyMovieList.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyMovieList.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1F4BB8B0289C42B7008BBECA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1F4BB8B2289C42B7008BBECA /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -55,6 +64,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1F226353289FCFE4003DC0FE /* SDWebImage in Frameworks */,
 				1F4BB8D3289C482D008BBECA /* Alamofire in Frameworks */,
 				1F4BB8D6289C4843008BBECA /* SnapKit in Frameworks */,
 			);
@@ -67,6 +77,7 @@
 			isa = PBXGroup;
 			children = (
 				1F4BB8B4289C42B7008BBECA /* MovieListController.swift */,
+				1F226354289FD04A003DC0FE /* MovieListViewModel.swift */,
 			);
 			path = MovieList;
 			sourceTree = "<group>";
@@ -85,6 +96,23 @@
 				1F226348289FB41F003DC0FE /* FavouriteListViewController.swift */,
 			);
 			path = FavouriteList;
+			sourceTree = "<group>";
+		};
+		1F22634C289FCDDC003DC0FE /* TableViewCells */ = {
+			isa = PBXGroup;
+			children = (
+				1F22634D289FCDFE003DC0FE /* MovieListTableViewCell.swift */,
+				1F22634F289FCF79003DC0FE /* MovieCollectionViewCell.swift */,
+			);
+			path = TableViewCells;
+			sourceTree = "<group>";
+		};
+		1F226356289FE3A6003DC0FE /* DataModel */ = {
+			isa = PBXGroup;
+			children = (
+				1F226357289FE3B6003DC0FE /* MovieDataModel.swift */,
+			);
+			path = DataModel;
 			sourceTree = "<group>";
 		};
 		1F4BB8A4289C42B7008BBECA = {
@@ -138,6 +166,7 @@
 		1F4BB8C9289C4620008BBECA /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				1F226356289FE3A6003DC0FE /* DataModel */,
 				1F4BB8D9289C60F9008BBECA /* Movie.swift */,
 				1F4BB8DB289C6108008BBECA /* Tv.swift */,
 			);
@@ -177,6 +206,7 @@
 		1F4BB8CD289C463C008BBECA /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				1F22634C289FCDDC003DC0FE /* TableViewCells */,
 				1F4BB8BE289C42BA008BBECA /* LaunchScreen.storyboard */,
 				1F22633C289FA9A3003DC0FE /* BaseViewController.swift */,
 				1F22634A289FB710003DC0FE /* HeaderSectionView.swift */,
@@ -203,6 +233,7 @@
 			packageProductDependencies = (
 				1F4BB8D2289C482D008BBECA /* Alamofire */,
 				1F4BB8D5289C4843008BBECA /* SnapKit */,
+				1F226352289FCFE4003DC0FE /* SDWebImage */,
 			);
 			productName = MyMovieList;
 			productReference = 1F4BB8AD289C42B7008BBECA /* MyMovieList.app */;
@@ -235,6 +266,7 @@
 			packageReferences = (
 				1F4BB8D1289C482D008BBECA /* XCRemoteSwiftPackageReference "Alamofire" */,
 				1F4BB8D4289C4843008BBECA /* XCRemoteSwiftPackageReference "SnapKit" */,
+				1F226351289FCFE4003DC0FE /* XCRemoteSwiftPackageReference "SDWebImage" */,
 			);
 			productRefGroup = 1F4BB8AE289C42B7008BBECA /* Products */;
 			projectDirPath = "";
@@ -262,7 +294,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1F226358289FE3B6003DC0FE /* MovieDataModel.swift in Sources */,
+				1F226350289FCF79003DC0FE /* MovieCollectionViewCell.swift in Sources */,
 				1F4BB8DA289C60F9008BBECA /* Movie.swift in Sources */,
+				1F22634E289FCDFE003DC0FE /* MovieListTableViewCell.swift in Sources */,
 				1F226346289FB3F4003DC0FE /* TvListViewController.swift in Sources */,
 				1F226349289FB41F003DC0FE /* FavouriteListViewController.swift in Sources */,
 				1F22633F289FAA2A003DC0FE /* Constants.swift in Sources */,
@@ -277,6 +312,7 @@
 				1F4BB8D0289C4728008BBECA /* BaseService.swift in Sources */,
 				1F226341289FACF7003DC0FE /* ColorExtension.swift in Sources */,
 				1F4BB8B3289C42B7008BBECA /* SceneDelegate.swift in Sources */,
+				1F226355289FD04A003DC0FE /* MovieListViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -486,6 +522,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		1F226351289FCFE4003DC0FE /* XCRemoteSwiftPackageReference "SDWebImage" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SDWebImage/SDWebImage.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
 		1F4BB8D1289C482D008BBECA /* XCRemoteSwiftPackageReference "Alamofire" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
@@ -505,6 +549,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		1F226352289FCFE4003DC0FE /* SDWebImage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 1F226351289FCFE4003DC0FE /* XCRemoteSwiftPackageReference "SDWebImage" */;
+			productName = SDWebImage;
+		};
 		1F4BB8D2289C482D008BBECA /* Alamofire */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 1F4BB8D1289C482D008BBECA /* XCRemoteSwiftPackageReference "Alamofire" */;
