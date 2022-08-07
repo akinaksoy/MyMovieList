@@ -21,5 +21,17 @@ class TvListViewModel {
         }
     }
     
-    
+    func getRandomTv(completion : @escaping(Result<Tv,Error>) -> Void)  {
+        BaseService.requestAPI(APIConstants.URL.tvPopularURL, object: TvResponse.self) { results in
+            switch results {
+            case .success(let result) :
+                let popularTVs = result.results
+                let headerTv = popularTVs[Int.random(in: 0..<popularTVs.count)]
+                completion(.success(headerTv))
+            case .failure(let error) :
+                completion(.failure(error))
+            }
+            
+        }
+    }
 }

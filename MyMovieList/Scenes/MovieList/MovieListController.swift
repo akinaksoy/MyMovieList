@@ -168,7 +168,7 @@ extension MovieListController {
         viewModel.getRandomMovie { result in
             switch result {
             case.success(let movie) :
-                self.headerView?.configure(with: movie)
+                self.headerView?.configure(with: movie.poster_path ?? "")
             case .failure(let error) :
                 print(error.localizedDescription)
             }

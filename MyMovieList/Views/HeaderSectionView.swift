@@ -65,9 +65,8 @@ class HeaderSectionView: UIView {
             make.edges.equalToSuperview()
         }
     }
-    public func configure(with model: Movie){
-        guard let modelPath = model.poster_path else {return}
-        guard let url = URL(string: "https://image.tmdb.org/t/p/w500\(modelPath)") else {return}
+    public func configure(with posterPath : String){
+        guard let url = URL(string: "https://image.tmdb.org/t/p/w500\(posterPath)") else {return}
         KF.url(url).set(to: headerImageView)
     }
     private func configureDesign() {
