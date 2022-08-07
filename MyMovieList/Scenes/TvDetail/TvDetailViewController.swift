@@ -14,6 +14,7 @@ class TvDetailViewController: BaseViewController {
     let headerTitle = Label.init().headerTitleLabel
     let releaseDate = Label.init().subTitleLabel
     let overview = Label.init().contentTitle
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 

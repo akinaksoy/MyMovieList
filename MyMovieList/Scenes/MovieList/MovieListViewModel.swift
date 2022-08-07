@@ -22,5 +22,19 @@ class MovieListViewModel {
         }
     }
     
+    func getRandomMovie(completion : @escaping(Result<Movie,Error>) -> Void)  {
+        BaseService.requestAPI(APIConstants.URL.moviePopularURL, object: MovieResponse.self) { results in
+            switch results {
+            case .success(let result) :
+                let popularMovies = result.results
+                let headerMovie = popularMovies[Int.random(in: 0..<popularMovies.count)]
+                completion(.success(headerMovie))
+            case .failure(let error) :
+                completion(.failure(error))
+            }
+            
+        }
+    }
+    
     
 }

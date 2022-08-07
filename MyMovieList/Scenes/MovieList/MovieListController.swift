@@ -21,13 +21,19 @@ class MovieListController: BaseViewController {
     var topRatedMovies : [Movie] = [Movie]()
     var upcomingMovies : [Movie] = [Movie]()
     var nowPlayingMovies : [Movie] = [Movie]()
+    
+    private var headerView : HeaderSectionView?
+    
+    let refreshControl = UIRefreshControl()
     lazy var movieTableView : UITableView = {
         let table = UITableView()
         table.delegate = self
         table.dataSource = self
         table.backgroundColor = UIColor.generalColor(primaryColor: Constants.Colors.backgroundColor, .black)
         table.register(MovieListTableViewCell.self, forCellReuseIdentifier: MovieListTableViewCell.identifier)
-        table.tableHeaderView = HeaderSectionView(frame: CGRect(x: 0, y: 0, width: view.bounds.width, height: 420))
+        headerView = HeaderSectionView(frame: CGRect(x: 0, y: 0, width: view.bounds.width, height: 420))
+        configureHeaderImage()
+        table.tableHeaderView = headerView
         return table
     }()
     
@@ -48,7 +54,10 @@ class MovieListController: BaseViewController {
         super.configureDesign()
         
         view.addSubview(movieTableView)
-        
+        refreshControl.attributedTitle = NSAttributedString(string: "Pull to refresh")
+        refreshControl.addTarget(self, action: #selector(self.refresh(_:)), for: .valueChanged)
+       
+        movieTableView.addSubview(refreshControl)
         movieTableView.snp.makeConstraints { make in
             make.edges.equalTo(view.safeAreaLayoutGuide)
         }
@@ -150,5 +159,25 @@ extension MovieListController : MovieCollectionViewTableViewCellDelegate {
             self?.navigationController?.pushViewController(vc, animated: true)
         }
         
+    }
+}
+
+extension MovieListController {
+    
+    func configureHeaderImage() {
+        viewModel.getRandomMovie { result in
+            switch result {
+            case.success(let movie) :
+                self.headerView?.configure(with: movie)
+            case .failure(let error) :
+                print(error.localizedDescription)
+            }
+        }
+    }
+    
+    @objc func refresh(_ sender: AnyObject) {
+        movieTableView.reloadData()
+        configureHeaderImage()
+        refreshControl.endRefreshing()
     }
 }

@@ -7,6 +7,7 @@
 
 import UIKit
 import SnapKit
+import Kingfisher
 class HeaderSectionView: UIView {
 
     private let detailButton : UIButton = {
@@ -33,11 +34,10 @@ class HeaderSectionView: UIView {
         let imageView = UIImageView()
         imageView.contentMode = .scaleAspectFit
         imageView.clipsToBounds = true
-        imageView.image = UIImage(named: "heroImage")
         return imageView
     }()
     
-    lazy var stackView : UIStackView = {
+    private lazy var stackView : UIStackView = {
         let stackView   = UIStackView()
         stackView.axis  = NSLayoutConstraint.Axis.horizontal
         stackView.distribution  = UIStackView.Distribution.equalCentering
@@ -65,8 +65,12 @@ class HeaderSectionView: UIView {
             make.edges.equalToSuperview()
         }
     }
-    
-    func configureDesign() {
+    public func configure(with model: Movie){
+        guard let modelPath = model.poster_path else {return}
+        guard let url = URL(string: "https://image.tmdb.org/t/p/w500\(modelPath)") else {return}
+        KF.url(url).set(to: headerImageView)
+    }
+    private func configureDesign() {
         addSubview(headerImageView)
         addSubview(stackView)
         
