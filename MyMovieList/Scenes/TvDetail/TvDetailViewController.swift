@@ -6,7 +6,7 @@
 //
 
 import UIKit
-
+import Kingfisher
 class TvDetailViewController: BaseViewController {
 
     private var tv : Tv? = nil
@@ -71,7 +71,7 @@ class TvDetailViewController: BaseViewController {
         guard let tvTitle = tv?.original_name, let releaseDateValue = tv?.first_air_date  else { return }
         guard let tvImage = tv?.poster_path else {return }
         guard let url = URL(string: "https://image.tmdb.org/t/p/w500\(tvImage)") else {return }
-        headerImage.sd_setImage(with: url, completed: nil)
+        KF.url(url).set(to: headerImage)
         headerTitle.text = tvTitle
         releaseDate.text = "First Air Date : \(releaseDateValue)"
         overview.text = tv?.overview

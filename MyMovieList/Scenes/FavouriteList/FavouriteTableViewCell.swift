@@ -6,7 +6,7 @@
 //
 
 import UIKit
-
+import Kingfisher
 class FavouriteTableViewCell: UITableViewCell {
 
     static let identifier = "FavouriteTableViewCell"
@@ -31,7 +31,7 @@ class FavouriteTableViewCell: UITableViewCell {
     func configure(with model : Movie) {
         guard let modelUrl = model.poster_path, let headerTitle = model.original_title, let releaseDate = model.release_date else {return}
         guard let url = URL(string: "https://image.tmdb.org/t/p/w500\(modelUrl)") else {return}
-        headerImageView.sd_setImage(with: url, completed: nil)
+        KF.url(url).set(to: headerImageView)
         titleLabel.text = headerTitle
         releaseDateLabel.text = releaseDate
     }

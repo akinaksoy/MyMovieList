@@ -7,6 +7,7 @@
 
 import UIKit
 import SnapKit
+import Kingfisher
 class MovieDetailViewController: BaseViewController {
 
     
@@ -87,7 +88,7 @@ class MovieDetailViewController: BaseViewController {
         guard let movieTitle = movie?.original_title, let releaseDateValue = movie?.release_date  else { return }
         guard let movieImage = movie?.poster_path else {return }
         guard let url = URL(string: "https://image.tmdb.org/t/p/w500\(movieImage)") else {return }
-        headerImage.sd_setImage(with: url, completed: nil)
+        KF.url(url).set(to: headerImage)
         headerTitle.text = movieTitle
         releaseDate.text = "Release Date : \(releaseDateValue)"
         overview.text = movie?.overview

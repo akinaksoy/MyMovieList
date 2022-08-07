@@ -16,7 +16,6 @@
 		1F22634B289FB710003DC0FE /* HeaderSectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F22634A289FB710003DC0FE /* HeaderSectionView.swift */; };
 		1F22634E289FCDFE003DC0FE /* MovieListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F22634D289FCDFE003DC0FE /* MovieListTableViewCell.swift */; };
 		1F226350289FCF79003DC0FE /* MovieCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F22634F289FCF79003DC0FE /* MovieCollectionViewCell.swift */; };
-		1F226353289FCFE4003DC0FE /* SDWebImage in Frameworks */ = {isa = PBXBuildFile; productRef = 1F226352289FCFE4003DC0FE /* SDWebImage */; };
 		1F226355289FD04A003DC0FE /* MovieListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F226354289FD04A003DC0FE /* MovieListViewModel.swift */; };
 		1F22635C289FED10003DC0FE /* TvTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F22635B289FED10003DC0FE /* TvTableViewCell.swift */; };
 		1F226360289FEE13003DC0FE /* TvCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F22635F289FEE13003DC0FE /* TvCollectionViewCell.swift */; };
@@ -29,6 +28,7 @@
 		1F22637028A034E6003DC0FE /* MovieDatabaseFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F22636F28A034E6003DC0FE /* MovieDatabaseFunctions.swift */; };
 		1F22637228A03E83003DC0FE /* FavouriteTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F22637128A03E83003DC0FE /* FavouriteTableViewCell.swift */; };
 		1F22637428A03EDC003DC0FE /* FavouriteListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F22637328A03EDC003DC0FE /* FavouriteListViewModel.swift */; };
+		1F22637728A04BA6003DC0FE /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 1F22637628A04BA6003DC0FE /* Kingfisher */; };
 		1F4BB8B1289C42B7008BBECA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F4BB8B0289C42B7008BBECA /* AppDelegate.swift */; };
 		1F4BB8B3289C42B7008BBECA /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F4BB8B2289C42B7008BBECA /* SceneDelegate.swift */; };
 		1F4BB8B5289C42B7008BBECA /* MovieListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F4BB8B4289C42B7008BBECA /* MovieListController.swift */; };
@@ -84,7 +84,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1F226353289FCFE4003DC0FE /* SDWebImage in Frameworks */,
+				1F22637728A04BA6003DC0FE /* Kingfisher in Frameworks */,
 				1F4BB8D3289C482D008BBECA /* Alamofire in Frameworks */,
 				1F4BB8D6289C4843008BBECA /* SnapKit in Frameworks */,
 			);
@@ -287,7 +287,7 @@
 			packageProductDependencies = (
 				1F4BB8D2289C482D008BBECA /* Alamofire */,
 				1F4BB8D5289C4843008BBECA /* SnapKit */,
-				1F226352289FCFE4003DC0FE /* SDWebImage */,
+				1F22637628A04BA6003DC0FE /* Kingfisher */,
 			);
 			productName = MyMovieList;
 			productReference = 1F4BB8AD289C42B7008BBECA /* MyMovieList.app */;
@@ -320,7 +320,7 @@
 			packageReferences = (
 				1F4BB8D1289C482D008BBECA /* XCRemoteSwiftPackageReference "Alamofire" */,
 				1F4BB8D4289C4843008BBECA /* XCRemoteSwiftPackageReference "SnapKit" */,
-				1F226351289FCFE4003DC0FE /* XCRemoteSwiftPackageReference "SDWebImage" */,
+				1F22637528A04BA6003DC0FE /* XCRemoteSwiftPackageReference "Kingfisher" */,
 			);
 			productRefGroup = 1F4BB8AE289C42B7008BBECA /* Products */;
 			projectDirPath = "";
@@ -586,9 +586,9 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		1F226351289FCFE4003DC0FE /* XCRemoteSwiftPackageReference "SDWebImage" */ = {
+		1F22637528A04BA6003DC0FE /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
 			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/SDWebImage/SDWebImage.git";
+			repositoryURL = "https://github.com/onevcat/Kingfisher.git";
 			requirement = {
 				branch = master;
 				kind = branch;
@@ -613,10 +613,10 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		1F226352289FCFE4003DC0FE /* SDWebImage */ = {
+		1F22637628A04BA6003DC0FE /* Kingfisher */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 1F226351289FCFE4003DC0FE /* XCRemoteSwiftPackageReference "SDWebImage" */;
-			productName = SDWebImage;
+			package = 1F22637528A04BA6003DC0FE /* XCRemoteSwiftPackageReference "Kingfisher" */;
+			productName = Kingfisher;
 		};
 		1F4BB8D2289C482D008BBECA /* Alamofire */ = {
 			isa = XCSwiftPackageProductDependency;
