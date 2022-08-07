@@ -6,7 +6,7 @@
 //
 
 import UIKit
-
+import SnapKit
 class MovieListController: BaseViewController {
 
     enum Sections: Int {
@@ -21,6 +21,8 @@ class MovieListController: BaseViewController {
         let table = UITableView()
         table.delegate = self
         table.dataSource = self
+        table.backgroundColor = UIColor.generalColor(primaryColor: Constants.Colors.backgroundColor, .black)
+        table.tableHeaderView = HeaderSectionView(frame: CGRect(x: 0, y: 0, width: view.bounds.width, height: 420))
         return table
     }()
     
@@ -30,11 +32,20 @@ class MovieListController: BaseViewController {
             print(result)
         }
         configureDesign()
+        configureNavigationBar()
     }
+    
     
     
     override func configureDesign() {
         super.configureDesign()
+        
+        view.addSubview(movieTableView)
+        
+        movieTableView.snp.makeConstraints { make in
+            make.edges.equalTo(view.safeAreaLayoutGuide)
+        }
+        
         
     }
     
@@ -43,7 +54,7 @@ class MovieListController: BaseViewController {
 
 extension MovieListController : UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 0
+        return 2
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
